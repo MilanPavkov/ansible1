@@ -1,0 +1,10 @@
+---
+- name: demonstrate failing task
+  gather_facts: false
+  hosts: all
+  tasks:
+  - name: creating users the wrong way
+    user:
+      name: anna
+  - debug:
+      msg: run me again and se if you got there
