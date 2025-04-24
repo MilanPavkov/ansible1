@@ -1,5 +1,5 @@
 - name: myplay
-  hosts: centos
+  hosts: centos10-01
   tasks:
   - name: task1
     debug:
@@ -7,10 +7,3 @@
   - name: task2
     debug:
       msg: hello task2
-
-- name: ubuntusettings
-  hosts: ubuntu01
-  tasks:
-  - name: hello ubuntu
-    debug:
-      msg: hello ubuntu
