@@ -1,5 +1,5 @@
 - name: myplay
-  hosts: centos10-01
+  hosts: win
   tasks:
   - name: task1
     debug:
