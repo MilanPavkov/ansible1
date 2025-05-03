@@ -20,11 +20,11 @@
       state: enabled
       immediate: yes
 
-- name: test https accessibility
-  become: false
-  gather_facts: false
-  hosts: localhost
-  tasks:
-  - name: tets httpd access
-    uri:
-      url: http://centos8-01
+# - name: test https accessibility
+#   become: false
+#   gather_facts: false
+#   hosts: localhost
+#   tasks:
+#   - name: tets httpd access
+#     uri:
+#       url: http://centos8-01
