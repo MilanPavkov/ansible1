@@ -1,6 +1,6 @@
 ---
 - name: Create user using variable
-  hosts: centos8-01
+  hosts: centos
   vars:
     user: lisa
   tasks:
