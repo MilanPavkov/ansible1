@@ -1,7 +1,7 @@
 ---
 - name: install start and enable httpd
   gather_facts: false
-  hosts: centos
+  hosts: centos8-01
   tasks:
   - name: install package
     package:
@@ -27,4 +27,4 @@
   tasks:
   - name: tets httpd access
     uri:
-      url: http://centos10-01
+      url: http://centos8-01
