@@ -1,0 +1,9 @@
+---
+- name: Create user using variable
+  hosts: centos8-01
+  vars:
+    user: lisa
+  tasks:
+    - name: create userr {{ user }} on host {{ ansible_hostname }} 
+      user:
+        name: "{{ user }}" 
