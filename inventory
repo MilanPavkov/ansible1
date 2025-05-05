@@ -1,7 +1,9 @@
 ubuntu01
 centos8-01
+centos8-02
 centos7-01
+centos7-03
 
 [centos]
-centos10-01
-centos10-02
+centos7-03
+centos8-02

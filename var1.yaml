@@ -1,7 +1,8 @@
 ---
-- name: using variable omclude file
-  hosts: centos8-01
+- name: using variable include file
+  hosts: centos
   gather_facts: no
+  become: yes
   vars_files: myvars.yaml
   tasks:
   - name: install package {{ maypackage }}
