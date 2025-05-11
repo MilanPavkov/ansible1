@@ -1,0 +1,20 @@
+---
+- hosts: centos
+  tasks:
+  - name: Show IP addresses
+    debug:
+      msg: >
+        This host uses IP address {{ ansible_facts['default_ipv4']['address'] }}
+  - name: Show IP addresses - new and depicated
+    debug:
+      msg: This host uses IP address {{ ansible_facts.default_ipv4.address }}
+   
+
+  - name: Again old niotaion
+    debug:
+      msg: This host uses IP address {{ ansible_default_ipv4['address'] }}
+  - name: again - old and sooo depricated
+    debug:
+      msg:  This host uses IP address {{ ansible_default_ipv4.address }}
+
+ 
