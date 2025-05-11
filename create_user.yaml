@@ -1,0 +1,10 @@
+---
+- name: create user
+  hosts: centos
+  vars_files:
+    - secret.yml
+  tasks:
+  - name: creating user
+    user:
+      name: "{{ username }}"
+      password: "{{ pwhash}}"      

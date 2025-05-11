@@ -1,0 +1,23 @@
+---
+- name: Install httpd and show status
+  hosts: webservers
+  tasks:
+  - name: install package
+    package:
+      name: httpd
+      state: latest
+  - name: start and enable service
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+
+  - name: open firewall
+    firewalld:
+      service: http
+      permanent: yes
+      state: enabled
+      immediate: yes
+
+  - debug:
+      msg: using {{ web_package }} and {{ web_service }}        

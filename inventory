@@ -1,9 +1,11 @@
 ubuntu01
-centos8-01
-centos8-02
-centos7-01
 centos7-03
+centos8-02
 
 [centos]
+centos7-03
+centos8-02
+
+[webservers]
 centos7-03
 centos8-02

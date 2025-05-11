@@ -1,0 +1,24 @@
+---
+- name: when demo
+  hosts: all
+  vars:
+   supported_distros:
+     - Rocky
+     - CentOS
+     - Fedora
+   rhpackage: httpd
+   ubupackage: apache2
+  tasks:
+    - name: Install RH family specific package
+      yum:
+        name: "{{ rhpackage }}"
+        state: present
+      when: ansible_distribution in supported_distros
+    - name: Install Ubuntu package
+      apt:
+        name: "{{ ubupackage }}"
+        state: present
+      when: ansible_distribution == "Ubuntu"  
+      
+
+
