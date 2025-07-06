@@ -1,0 +1,25 @@
+---
+- name: create user {{ user }}
+  vars:
+    user: linda
+  hosts: centos8-02
+  tasks:
+  - name: check user
+    command: id {{ user }}
+    register: iduser
+  - name: debug iduser
+    debug:
+      var: iduser       
+  - name: beforecheck
+    fail: 
+      msg: user already exists
+    when: iduser.rc == 0
+  - name: create user {{ user }}
+    command: useradd {{ user }}
+
+- name: continuing
+  hosts: centos8-02
+  tasks:
+  - debug:
+      msg: we made it        
+

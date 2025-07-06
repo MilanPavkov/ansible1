@@ -1,4 +1,4 @@
-ubuntu01
+ubuntu02
 centos7-03
 centos8-02
 
@@ -9,3 +9,7 @@ centos8-02
 [webservers]
 centos7-03
 centos8-02
+
+[test]
+centos8-02
+ubuntu02
