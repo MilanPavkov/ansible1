@@ -1,0 +1,33 @@
+---
+- name: install nginx
+  hosts: test
+  pre_tasks:
+  - block:        
+    - name: remove apache
+      service:
+        name: httpd
+        state: stopped
+        enabled: no
+    - name: remove package
+      package:  
+        name: httpd
+        state: absent      
+
+   
+    - name: performe package update
+      package:
+        name: '*'
+        state: latest
+    when:
+      - ansible_facts['distribution'] == 'CentOS'        
+  roles:
+  - geerlingguy.nginx
+
+  post_tasks:
+  - file:
+      path: /var/vavche/dnf
+      state: absent      
+  
+
+
+
